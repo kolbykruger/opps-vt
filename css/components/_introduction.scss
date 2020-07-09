@@ -1,9 +1,43 @@
 .introduction {
 
 	.container {
-	    max-width: 960px;
-	    padding: 1em;
-	    text-align: center;
+
+	}
+
+	.group {
+		align-items: center;
+		padding: 2em;
+	}
+
+	.image {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background: $color-3;
+			border-radius: 0.125em;
+			z-index: -2;
+
+			transform: translate(-2em, 2em);
+		}
+
+		img {
+			box-shadow: $box-shadow-3;
+			border-radius: 0.125em;
+		}
+	}
+
+	.details {
+		flex: 1;
+
+		.text {
+			padding: 1em 6em;
+		}
 	}
 
 	@media (max-width: 768px) {
