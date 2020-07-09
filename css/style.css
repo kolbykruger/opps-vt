@@ -547,7 +547,7 @@ html.wf-inactive {
 
 body {
   color: #3D5B59;
-  background: #f1f2f3;
+  background: #fff;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -578,6 +578,13 @@ p {
 
 p:last-of-type {
   margin: 0;
+}
+
+p.sup {
+  color: #BC0090;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 a {
@@ -801,6 +808,15 @@ hr::before {
   color: #fff;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.11), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
 .header .container {
   position: relative;
   max-width: 1200px;
@@ -808,11 +824,11 @@ hr::before {
 }
 .header .group {
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 .header .logo {
   width: 100%;
-  max-width: 240px;
+  max-width: 220px;
 }
 .header .logo a {
   display: block;
@@ -909,7 +925,7 @@ hr::before {
   align-items: center;
 }
 .nav > ul > li {
-  margin: 0 0 0 32px;
+  margin: 0 0 0 2.5em;
 }
 .nav > ul li:last-child ul {
   left: auto;
@@ -929,12 +945,23 @@ hr::before {
   z-index: 10;
 }
 .nav a {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   display: block;
   color: #3D5B59;
   text-decoration: none;
   transition: 250ms ease;
+  font-weight: 600;
+}
+.nav a.button {
+  min-width: 100%;
+}
+.nav a.button i {
+  font-size: inherit;
+  margin: 0;
+}
+.nav a.button:hover, .nav a.button:focus {
+  color: #fff;
 }
 .nav a:hover, .nav a:focus {
   color: #81BC00;
@@ -1261,7 +1288,9 @@ footer .ewd img {
 .button {
   cursor: pointer;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  min-width: 200px;
   line-height: inherit;
   color: #fff;
   border: none;
@@ -1273,8 +1302,9 @@ footer .ewd img {
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   margin: 0;
-  padding: 0.75em 1em;
+  padding: 0.8em 1em;
   background: #81BC00;
   color: #fff;
   border-radius: 0.25em;
@@ -1289,7 +1319,7 @@ footer .ewd img {
   margin: 0 0 0 1em;
 }
 .button:hover, .button:focus {
-  background: #a4ef00;
+  background: #008476;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .button:active {
@@ -1320,6 +1350,18 @@ footer .ewd img {
   box-shadow: none;
   color: #008476;
   border-color: #008476;
+}
+.button-secondary {
+  background: #008476;
+}
+.button-secondary:hover, .button-secondary:focus {
+  background: #00a391;
+}
+.button-tertiary {
+  background: #BC0090;
+}
+.button-tertiary:hover, .button-tertiary:focus {
+  background: #db00a7;
 }
 .button[disabled] {
   background: #f1f2f3;
@@ -1912,6 +1954,7 @@ p.simplesearch-results,
 }
 .carousel .container {
   padding: 0;
+  max-width: 100%;
 }
 .carousel .flickity-viewport {
   width: 100%;
@@ -1920,6 +1963,7 @@ p.simplesearch-results,
   -webkit-user-select: none;
           user-select: none;
   width: 100%;
+  height: 100vh;
   position: relative;
   outline: none;
 }
@@ -1932,16 +1976,18 @@ p.simplesearch-results,
   -webkit-user-select: none;
           user-select: none;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 .carousel .slide .info {
   position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  color: #fff;
+  bottom: 1em;
+  right: 1em;
   padding: 2em;
-  text-align: center;
+  text-align: right;
+}
+.carousel .slide .info * {
+  color: #fff;
 }
 .carousel .slide .title {
   margin: 0;
@@ -1976,7 +2022,10 @@ p.simplesearch-results,
     font-size: 1.75rem;
   }
 }
-.carousel .slide .button {
+.carousel .slide .buttons {
+  justify-content: flex-end;
+}
+.carousel .slide .buttons .button {
   margin: 0.5em 0;
 }
 .features .group {
@@ -2143,4 +2192,78 @@ table td {
   border-color: inherit;
   padding: 1rem;
   white-space: nowrap;
+}
+
+.member-stories .container {
+  max-width: 1400px;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.11), 0 3px 6px rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+.member-stories .flickity-button {
+  background: transparent;
+  opacity: 0.25;
+}
+.member-stories .flickity-button:hover, .member-stories .flickity-button:focus {
+  opacity: 1;
+}
+.member-stories .flickity-page-dots {
+  bottom: 0.5em;
+}
+.member-stories .group {
+  width: 100%;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+.member-stories .image {
+  width: 50%;
+}
+.member-stories .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.member-stories .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 6em;
+  min-height: 600px;
+  background: #f1f2f3;
+}
+.member-stories .details .sup {
+  margin-bottom: 1.5em;
+}
+.member-stories .details .title {
+  font-weight: 600;
+}
+.member-stories .details .title {
+  font-size: 1.75rem;
+}
+@media screen and (min-width: 38rem) {
+  .member-stories .details .title {
+    font-size: calc(1.75rem + 0.75 * ((100vw - 38rem) / 32));
+  }
+}
+@media screen and (min-width: 70rem) {
+  .member-stories .details .title {
+    font-size: 2.5rem;
+  }
+}
+.member-stories .details .description {
+  margin-top: 1.5em;
+}
+.member-stories .details .buttons {
+  margin-top: 2em;
+}
+
+.sticky-button {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 99;
+}
+.sticky-button .button {
+  min-width: auto;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.11), 0 3px 6px rgba(0, 0, 0, 0.08);
 }

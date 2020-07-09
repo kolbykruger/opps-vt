@@ -1,0 +1,68 @@
+.member-stories {
+
+    .container {
+        max-width: 1400px;
+        box-shadow: $box-shadow-3;
+        padding: 0;
+    }
+
+    .flickity {
+
+        &-button {
+            background: transparent;
+            opacity: 0.25;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
+
+        &-page-dots {
+            bottom: 0.5em;
+        }
+    }
+
+    .group {
+        width: 100%;
+        border-radius: 0.25em;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        padding: 6em;
+        min-height: 600px;
+        background: $color-grey-1;
+
+        .sup {
+            margin-bottom: 1.5em;
+        }
+
+        .title {
+            @include fluid('font-size', 1.75rem, 2.5rem);
+            font-weight: 600;
+        }
+
+        .description {
+            margin-top: 1.5em;
+        }
+
+        .buttons {
+            margin-top: 2em;
+        }
+    }
+}

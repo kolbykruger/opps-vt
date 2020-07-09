@@ -48,6 +48,17 @@ $('.carousel .group').flickity({
     autoPlay: 8000,
 });
 
+$('.member-stories .container').flickity({
+    cellSelector: '.group',
+    wrapAround: true,
+    adaptiveHeight: false,
+    cellAlign: 'center',
+    prevNextButtons: true,
+    pageDots: true,
+    imagesLoaded: true,
+    autoPlay: 8000,
+});
+
 //Universal Tables
 $('table').wrap("<div class='universal-table'></div>");
 

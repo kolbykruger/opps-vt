@@ -41,7 +41,7 @@
         align-items: center;
 
         > li {
-            margin: 0 0 0 32px;
+            margin: 0 0 0 2.5em;
         }
 
         li:last-child ul {
@@ -70,11 +70,26 @@
     }
 
     a {
-        @include fs(16px);
+        @include fs(20px);
         display: block;
         color: $color-0;
         text-decoration: none;
         transition: $transition-1;
+        font-weight: 600;
+
+        &.button {
+            min-width: 100%;
+
+            i {
+                font-size: inherit;
+                margin: 0;
+            }
+
+            &:hover,
+            &:focus {
+                color: #fff;
+            }
+        }
 
         &:hover,
         &:focus {

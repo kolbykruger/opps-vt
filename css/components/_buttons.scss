@@ -27,7 +27,9 @@ $button-background: $color-1;
 .button {
     cursor: pointer;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    min-width: 200px;
     line-height: inherit;
     color: $button-color;
     border: none;
@@ -39,8 +41,9 @@ $button-background: $color-1;
 .button {
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     margin: 0;
-    padding: 0.75em 1em;
+    padding: 0.8em 1em;
     background: $button-background;
     color: $button-color;
     border-radius: 0.25em;
@@ -56,7 +59,7 @@ $button-background: $color-1;
 
     &:hover,
     &:focus {
-        background: lighten($button-background, 10%);
+        background: $color-2;
         box-shadow: $box-shadow-2;
     }
 
@@ -97,7 +100,23 @@ $button-background: $color-1;
             border-color: $color-2
         }
     }
-    
+    &-secondary {
+        background: $color-2;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-2, 6%);
+        }
+    }
+    &-tertiary {
+        background: $color-3;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-3, 6%);
+        }
+    }
+
     &[disabled] {
         background: $color-grey-1;
         color: $color-0;

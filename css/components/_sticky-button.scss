@@ -1,0 +1,11 @@
+.sticky-button {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99;
+
+    .button {
+        min-width: auto;
+        box-shadow: $box-shadow-3;
+    }
+}
