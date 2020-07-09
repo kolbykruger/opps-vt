@@ -2006,16 +2006,16 @@ p.simplesearch-results,
   font-weight: 600;
 }
 .carousel .slide .title {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
 }
 @media screen and (min-width: 38rem) {
   .carousel .slide .title {
-    font-size: calc(1.75rem + 1.25 * ((100vw - 38rem) / 32));
+    font-size: calc(2.25rem + 2.75 * ((100vw - 38rem) / 32));
   }
 }
 @media screen and (min-width: 70rem) {
   .carousel .slide .title {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 }
 .carousel .slide .description {

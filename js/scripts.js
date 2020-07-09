@@ -46,6 +46,7 @@ $('.carousel .group').flickity({
     pageDots: true,
     imagesLoaded: true,
     autoPlay: 8000,
+    fade: true
 });
 
 $('.member-stories .container').flickity({
