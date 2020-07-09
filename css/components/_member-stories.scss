@@ -1,5 +1,22 @@
 .member-stories {
 
+    .animation-active & {
+
+		&.active {
+
+			.container {
+                transform: translate(0, 0);
+                opacity: 1;
+			}
+		}
+
+		.container {
+            transform: translate(0, 2em);
+            opacity: 0;
+            transition: 1s ease;
+        }
+	}
+
     .container {
         max-width: 1400px;
         box-shadow: $box-shadow-3;

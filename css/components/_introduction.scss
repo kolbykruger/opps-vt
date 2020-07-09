@@ -1,5 +1,56 @@
 .introduction {
 
+	.animation-active & {
+
+		&.active {
+
+			.image {
+
+				&::before {
+					transform: translate(-2em, 2em);
+				}
+			}
+
+			.details {
+
+			}
+
+			.text {
+
+				> * {
+					transform: translate(0, 0);
+					opacity: 1;
+				}
+			}
+		}
+
+		.image {
+
+			&::before {
+				transform: none;
+			}
+		}
+
+		.details {
+
+		}
+
+		.text {
+
+			> * {
+				transform: translate(0, 32px);
+				transition: 500ms ease;
+				opacity: 0;
+
+				@for $i from 1 through 6 {
+					&:nth-child(#{$i}) {
+						transition-delay: $i * 0.15s;
+					}
+				}
+			}
+		}
+	}
+
 	.container {
 
 	}
@@ -21,9 +72,9 @@
 			height: 100%;
 			background: $color-3;
 			border-radius: 0.125em;
-			z-index: -2;
-
+			transition: 1s ease;
 			transform: translate(-2em, 2em);
+			z-index: -2;
 		}
 
 		img {

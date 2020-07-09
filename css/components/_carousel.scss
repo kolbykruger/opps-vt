@@ -1,6 +1,20 @@
 .carousel {
     user-select: none;
 
+    .animation-active & {
+
+		&.active {
+
+			.container {
+                filter: grayscale(0);
+			}
+		}
+
+		.container {
+            filter: grayscale(1);
+            transition: 1s ease;
+        }
+	}
 
     .container {
         padding: 0;

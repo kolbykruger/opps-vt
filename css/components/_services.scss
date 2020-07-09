@@ -1,5 +1,26 @@
 .services {
 
+    .animation-active & {
+
+		&.active {
+
+			.service-item {
+                transform: scale(1);
+			}
+		}
+
+		.service-item {
+            transform: scale(0);
+            transition: 500ms ease;
+
+            @for $i from 1 through 6 {
+                &:nth-child(#{$i}) {
+                    transition-delay: $i * 0.15s;
+                }
+            }
+        }
+	}
+
     .container {
 
     }
